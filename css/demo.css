@@ -1,0 +1,214 @@
+body {
+  font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #eee;
+  background: #354458;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: 0.3s;
+          transition: 0.3s; }
+  a:hover {
+    color: #fff;
+    border-bottom-color: #fff; }
+
+.container {
+  text-align: center; }
+
+h1.demo-title {
+  position: relative;
+  display: inline-block;
+  margin: 50px 0 0; }
+  h1.demo-title:before, h1.demo-title:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.8); }
+  h1.demo-title:before {
+    left: -50px; }
+  h1.demo-title:after {
+    right: -50px; }
+
+.demo-subtitle {
+  margin: 5px 0 40px;
+  color: rgba(255, 255, 255, 0.4); }
+
+.description {
+  color: rgba(255, 255, 255, 0.7); }
+
+.showcase {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px; }
+  .showcase button {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+    border: none;
+    background-color: #3A9AD9;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 2px;
+    -webkit-transition: 0.3s;
+            transition: 0.3s; }
+    .showcase button:not([disabled]):hover {
+      background-color: #4fa7dd; }
+    .showcase button.bordered {
+      background-color: transparent;
+      border: 2px solid #3A9AD9;
+      padding: 8px 0; }
+      .showcase button.bordered:not([disabled]):hover {
+        background-color: #3A9AD9;
+        border-color: transparent; }
+    .showcase button.control-button {
+      width: 170px;
+      font-size: 13px;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: 0.5s 0s opacity, 0.1s visibility;
+              transition: 0.5s 0s opacity, 0.1s visibility; }
+      .showcase button.control-button.show-control {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: 0.5s 0.4s opacity, 0.3s background, 0.3s border;
+                transition: 0.5s 0.4s opacity, 0.3s background, 0.3s border; }
+      .showcase button.control-button.make-it-fail {
+        border-color: #EB7260; }
+        .showcase button.control-button.make-it-fail:hover {
+          background-color: #EB7260; }
+      .showcase button.control-button.make-it-succeed {
+        border-color: #29ABA4; }
+        .showcase button.control-button.make-it-succeed:hover {
+          background-color: #29ABA4; }
+
+.loading-button.open-loading {
+  color: rgba(255, 255, 255, 0.8); }
+  .loading-button.open-loading.infinity {
+    padding-top: 80px; }
+  .loading-button.open-loading svg {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: 1s opacity;
+            transition: 1s opacity;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+.loading-button.failed {
+  background-color: #EB7260; }
+.loading-button.succeed {
+  background-color: #29ABA4; }
+.loading-button.no-transition {
+  -webkit-transition: 0s;
+          transition: 0s; }
+  .loading-button.no-transition * {
+    -webkit-transition: 0s;
+            transition: 0s; }
+.loading-button svg {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: 0s;
+          transition: 0s; }
+  .loading-button svg path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+    fill: none; }
+    .loading-button svg path.success-path, .loading-button svg path.error-path, .loading-button svg path.error-path2 {
+      visibility: hidden; }
+
+.loading-button.top svg {
+  top: 10px; }
+.loading-button.bottom svg {
+  bottom: 10px; }
+.loading-button.left svg {
+  top: 50%;
+  -webkit-transform: scale(0.25) translateY(-50%);
+      -ms-transform: scale(0.25) translateY(-50%);
+          transform: scale(0.25) translateY(-50%);
+  -webkit-transform-origin: 0 0 0;
+      -ms-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  left: 20px; }
+.loading-button.right svg {
+  top: 50%;
+  -webkit-transform: scale(0.25) translateY(-50%);
+      -ms-transform: scale(0.25) translateY(-50%);
+          transform: scale(0.25) translateY(-50%);
+  -webkit-transform-origin: 100% 0 0;
+      -ms-transform-origin: 100% 0 0;
+          transform-origin: 100% 0 0;
+  left: auto;
+  right: 20px; }
+.loading-button.open-loading.left {
+  padding-left: 60px; }
+.loading-button.open-loading.right {
+  padding-right: 60px; }
+.loading-button.open-loading.top svg, .loading-button.open-loading.bottom svg {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s; }
+.loading-button.open-loading.circular-loading.top, .loading-button.open-loading.circle-loading.top {
+  padding-top: 140px; }
+.loading-button.open-loading.circular-loading.bottom, .loading-button.open-loading.circle-loading.bottom {
+  padding-bottom: 140px; }
+.loading-button.open-loading.infinity-loading.top {
+  padding-top: 80px; }
+.loading-button.open-loading.infinity-loading.bottom {
+  padding-bottom: 80px; }
+
+.loading-options {
+  text-align: center; }
+  .loading-options > div {
+    display: inline-block;
+    width: 40%;
+    cursor: default; }
+  .loading-options label {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer; }
+    .loading-options label input {
+      display: none; }
+      .loading-options label input:checked + span {
+        background-color: rgba(0, 0, 0, 0.5); }
+    .loading-options label span {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0.3); }
+
+.circle-loading circle {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
+.circle-loading.show-circles circle {
+  visibility: visible;
+  opacity: 1; }

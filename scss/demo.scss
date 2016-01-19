@@ -1,0 +1,265 @@
+body {
+  font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #eee;
+  background: #354458;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+  &:hover{
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
+.container{
+  text-align: center;
+}
+
+h1.demo-title{
+  position: relative;
+  display: inline-block;
+  margin: 50px 0 0;
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  &:before{
+    left: -50px;
+  }
+  &:after{
+    right: -50px;
+  }
+}
+
+.demo-subtitle{
+  margin: 5px 0 40px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.description{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.showcase{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  button {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+    border: none;
+    background-color: #3A9AD9;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 2px;
+    transition: 0.3s;
+    &:not([disabled]):hover{
+      background-color: lighten(#3A9AD9, 5%);
+    }
+    &.bordered{
+      background-color: transparent;
+      border: 2px solid #3A9AD9;
+      padding: 8px 0;
+      &:not([disabled]):hover{
+        background-color: #3A9AD9;
+        border-color: transparent;
+      }
+    }
+    &.control-button{
+      width: 170px;
+      font-size: 13px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s 0s opacity, 0.1s visibility;
+      &.show-control{
+        visibility: visible;
+        opacity: 1;
+        transition: 0.5s 0.4s opacity, 0.3s background, 0.3s border;
+      }
+      &.make-it-fail{
+        border-color: #EB7260;
+        &:hover{
+          background-color: #EB7260;
+        }
+      }
+      &.make-it-succeed{
+        border-color: #29ABA4;
+        &:hover{
+          background-color: #29ABA4;
+        }
+      }
+    }
+  }
+}
+
+// Loading button
+.loading-button{
+  // When loading button is open
+  &.open-loading{
+    color: rgba(255, 255, 255, 0.8);
+    &.infinity{
+      padding-top: 80px;
+    }
+    svg{
+      display: inline-block;
+      visibility: visible;
+      opacity: 1;
+      transition: 1s opacity;
+      transform: translateX(-50%);
+    }
+  }
+  // Loading failed
+  &.failed{
+    background-color: #EB7260;
+  }
+  // Loading succeed
+  &.succeed{
+    background-color: #29ABA4;
+  }
+  // Remove transition when changing demo position
+  &.no-transition{
+    transition: 0s;
+    *{
+      transition: 0s;
+    }
+  }
+  // SVG element, centered and hidden initially
+  svg{
+    visibility: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0s;
+    path{
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 4;
+      fill: none;
+      // To hide success and error paths
+      &.success-path, &.error-path, &.error-path2{
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+// Handle positions
+.loading-button {
+  &.top {
+    svg{
+      top: 10px;
+    }
+  }
+  &.bottom {
+    svg{
+      bottom: 10px;
+    }
+  }
+  &.left {
+    svg {
+      top: 50%;
+      transform: scale(0.25) translateY(-50%);
+      transform-origin: 0 0 0;
+      left: 20px;
+    }
+  }
+  &.right {
+    svg {
+      top: 50%;
+      transform: scale(0.25) translateY(-50%);
+      transform-origin: 100% 0 0;
+      left: auto;
+      right: 20px;
+    }
+  }
+  &.open-loading {
+    &.left {
+      padding-left: 60px;
+    }
+    &.right {
+      padding-right: 60px;
+    }
+    &.top, &.bottom {
+      svg{
+        transition-delay: 0.2s;
+      }
+    }
+    &.circular-loading, &.circle-loading {
+      &.top {
+        padding-top: 140px;
+      }
+      &.bottom {
+        padding-bottom: 140px;
+      }
+    }
+    &.infinity-loading {
+      &.top {
+        padding-top: 80px;
+      }
+      &.bottom {
+        padding-bottom: 80px;
+      }
+    }
+  }
+}
+
+.loading-options{
+  text-align: center;
+  > div {
+    display: inline-block;
+    width: 40%;
+    cursor: default;
+  }
+  label{
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    input{
+      display: none;
+      &:checked{
+        + span{
+          background-color: rgba(0,0,0,0.5);
+        }
+      }
+    }
+    span{
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      background-color: rgba(0,0,0,0.3);
+    }
+  }
+}
+
+.circle-loading {
+  circle {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  &.show-circles circle {
+    visibility: visible;
+    opacity: 1;
+  }
+}

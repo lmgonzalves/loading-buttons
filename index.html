@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Buttons</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <script src="js/classie.js"></script>
+    <script src="js/segment.js"></script>
+    <script src="js/loading-button.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="demo-title">Loading Buttons</h1>
+    <div class="demo-subtitle">by <a href="http://lmgonzalves.github.io/">lmgonzalves</a> for <a href="http://x-team.com/2016/01/creating-loading-buttons-svg-segment/">x-team article</a></div>
+    <div class="description">Just press the Send button and then make it fail or succeed</div>
+    <div class="description">Also play with all the possible loaders and positions</div>
+    <div class="showcase main-showcase">
+        <button class="control-button bordered make-it-fail">Make it fail</button>
+        <button class="loading-button circular-loading top">Send</button>
+        <button class="control-button bordered make-it-succeed">Make it succeed</button>
+    </div>
+    <div class="loading-options">
+        <div class="loaders">
+            <h2>Loaders</h2>
+            <label>
+                <input type="radio" name="loaders" value="circular-loading" checked="checked"/>
+                <span>circular</span>
+            </label>
+            <label>
+                <input type="radio" name="loaders" value="circle-loading"/>
+                <span>circle</span>
+            </label>
+            <label>
+                <input type="radio" name="loaders" value="infinity-loading"/>
+                <span>infinity</span>
+            </label>
+        </div>
+        <div class="positions">
+            <h2>Positions</h2>
+            <label>
+                <input type="radio" name="positions" value="top" checked="checked"/>
+                <span>top</span>
+            </label>
+            <label>
+                <input type="radio" name="positions" value="bottom"/>
+                <span>bottom</span>
+            </label>
+            <label>
+                <input type="radio" name="positions" value="left"/>
+                <span>left</span>
+            </label>
+            <label>
+                <input type="radio" name="positions" value="right"/>
+                <span>right</span>
+            </label>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="circular-loading">
+    <svg width="120px" height="120px">
+        <path class="outer-path" stroke="#fff" d="M 60 60 m 0 -50 a 50 50 0 1 1 0 100 a 50 50 0 1 1 0 -100"></path>
+        <path class="inner-path" stroke="rgba(255, 255, 255, 0.5)" d="M 60 60 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+        <path class="success-path" stroke="#fff" d="M 60 10 A 50 50 0 0 1 91 21 L 75 45 L 55 75 L 45 65"></path>
+        <path class="error-path" stroke="#fff" d="M 60 10 A 50 50 0 0 1 95 25 L 45 75"></path>
+        <path class="error-path2" stroke="#fff" d="M 60 30 A 30 30 0 0 1 81 81 L 45 45"></path>
+    </svg>
+</script>
+<script type="text/template" id="circle-loading">
+    <svg width="120px" height="120px">
+        <circle r="50" cx="60" cy="60" fill="none" stroke="rgba(255, 255, 255, 0.3)"></circle>
+        <circle r="30" cx="60" cy="60" fill="none" stroke="rgba(255, 255, 255, 0.3)"></circle>
+        <path class="outer-path" stroke="#fff" d="M 60 60 m 0 -50 a 50 50 0 1 1 0 100 a 50 50 0 1 1 0 -100"></path>
+        <path class="inner-path" stroke="#fff" d="M 60 60 m 0 -30 a 30 30 0 1 1 0 60 a 30 30 0 1 1 0 -60"></path>
+        <path class="success-path" stroke="#fff" d="M 60 10 A 50 50 0 0 0 16 36  L 45 65 L 55 75 L 75 45"></path>
+        <path class="error-path" stroke="#fff" d="M 60 10 A 50 50 0 0 0 25 95 L 75 45"></path>
+        <path class="error-path2" stroke="#fff" d="M 60 30 A 30 30 0 0 1 81 81 L 45 45"></path>
+    </svg>
+</script>
+<script type="text/template" id="infinity-loading">
+    <svg width="120px" height="60px">
+        <path class="infinity-path" stroke="#fff" d="M 30 10 a 20 20 0 1 0 0 40 c 20 0 40 -40 60 -40 a 20 20 0 0 1 0 40 c -20 0 -40 -40 -60 -40"></path>
+        <path class="success-path" stroke="#fff" d="M 30 10 C 15 10 35 25 45 35 L 55 45 L 75 15"></path>
+        <path class="error-path" stroke="#fff" d="M 30 10 a 20 20 0 1 0 0 40 Q 40 50 45 45 L 75 15"></path>
+        <path class="error-path2" stroke="#fff" d="M 30 10 Q 40 10 45 15 L 75 45"></path>
+    </svg>
+</script>
+<script src="js/demo-functions.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
