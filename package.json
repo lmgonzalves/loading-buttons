@@ -1,0 +1,18 @@
+{
+  "name": "loadings-buttons",
+  "version": "1.0.0",
+  "description": "A little library for generic animated button with segment-js",
+  "homepage": "https://github.com/lmgonzalves/loading-buttons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmgonzalves/loading-buttons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lmgonzalves/loading-buttons/issues"
+  },
+  "homepage": "https://github.com/lmgonzalves/loading-buttons",
+  "_id": "loadings_buttons@1.0.0",
+  "_from": "loadings_buttons@1.0.0",
+  "_npmVersion": "2.0.2",
+  "_nodeVersion": "0.10.26"
+}
